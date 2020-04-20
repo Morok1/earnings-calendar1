@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import {SERVER_URL} from '../constants.js';
+import {SERVER_URL_EARNINGS} from './constants.js';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import EarningsList from './EarningsList';
+import EarningsList from './earnings/EarningsList';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -15,7 +15,7 @@ const Login = () => {
   }
 
   const login = () => {
-    fetch(SERVER_URL + 'login', {
+    fetch(SERVER_URL_EARNINGS + 'login', {
       method: 'POST',
       body: JSON.stringify(user)
     })

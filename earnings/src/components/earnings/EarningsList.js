@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {SERVER_URL} from '../constants.js'
+import {SERVER_URL_EARNINGS} from '../constants.js'
 import ReactTable from "react-table";
 import 'react-table/react-table.css';
 import {toast, ToastContainer} from 'react-toastify';
@@ -8,7 +8,6 @@ import EditEarnings from './EditEarnings';
 import {CSVLink} from 'react-csv';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
-import AddEarnings from "./AddEarnings";
 
 class EarningsList extends Component {
   constructor(props) {
@@ -25,7 +24,7 @@ class EarningsList extends Component {
     // Read the token from the session storage
     // and include it to Authorization header
     // const token = sessionStorage.getItem("jwt");
-    fetch(SERVER_URL + '/earnings',
+    fetch(SERVER_URL_EARNINGS + '/earnings',
         /*{
           headers: {'Authorization': token}
         }*/)
@@ -66,7 +65,7 @@ class EarningsList extends Component {
   // Add new earnings
   addEarnings(earnings) {
     const token = sessionStorage.getItem("jwt");
-    fetch(SERVER_URL + 'api/cars',
+    fetch(SERVER_URL_EARNINGS + 'api/cars',
         {
           method: 'POST',
           headers: {
