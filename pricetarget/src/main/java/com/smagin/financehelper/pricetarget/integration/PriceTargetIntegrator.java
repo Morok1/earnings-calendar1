@@ -25,5 +25,5 @@ public class PriceTargetIntegrator {
         return restTemplate.getForObject(URL, Price.class);
     }
     private  UnaryOperator<String> stringStringFunction =
-            symbol -> PRICE_TARGET_URL + "?symbol=" + symbol + "&token" + Optional.ofNullable(token.get()).orElse("");
+            symbol -> PRICE_TARGET_URL + "?symbol=" + symbol + "&token=" + Optional.ofNullable(token.get()).orElse("");
 }

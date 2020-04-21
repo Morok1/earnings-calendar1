@@ -15,6 +15,8 @@ public class PriceTargetController {
 
     @GetMapping("/prices/{symbol}")
     public Price getPriceBy(@PathVariable("symbol") String symbol){
-        return integrator.getPriceByCompanyName(symbol);
+
+        Price priceByCompanyName = integrator.getPriceByCompanyName(symbol);
+        return priceByCompanyName;
     }
 }
